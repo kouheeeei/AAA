@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Google Maps API サンプル</title>
+  </head>
+  <body>
+    <p>現在地（新宿駅）はこちらです。</p>
+
+    <div id="map" style="width:600px; height:400px"></div>
+
+    <script>
+        function initMap() {
+            var center = new google.maps.LatLng(35.69015, 139.700299)
+            
+            // マップの中心位置を指定する
+            var opts = {
+                zoom: 13,
+                center: center
+            };
+            var map = new google.maps.Map(document.getElementById("map"), opts);
+
+            //　マップにマーカーを表示する
+            var marker = new google.maps.Marker({
+                map : map,
+                position : center
+            });
+        }
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeEsUbZB_Hr5ynEuhDmuT-FxcyMx5WqFk&callback=initMap">
+    </script>
+  </body>
+</html>
